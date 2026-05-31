@@ -13,10 +13,10 @@ try {
   themeParams.bindCssVars()
   document.documentElement.dataset.telegram = 'true'
   const applyColorScheme = () => {
-    document.documentElement.dataset.theme = themeParams.colorScheme() ?? 'dark'
+    document.documentElement.dataset.theme = themeParams.isDark() ? 'dark' : 'light'
   }
   applyColorScheme()
-  themeParams.on('changed', applyColorScheme)
+  themeParams.isDark.sub(applyColorScheme)
   miniApp.ready()
   if (viewport.expand.isAvailable()) viewport.expand()
 } catch {

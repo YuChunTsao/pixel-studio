@@ -15,7 +15,7 @@ const RATIOS: { label: string; value: RatioValue }[] = [
 export default function CropPanel() {
   const { canvasRef, imageRef, dispatch } = useEditor()
   const [ratio, setRatio] = useState<RatioValue>(null)
-  const [cropRect, setCropRect] = useState<Rect | null>(null)
+  const [, setCropRect] = useState<Rect | null>(null)
   const [active, setActive] = useState(false)
 
   // Ref mirrors cropRect state so canvas operations always use the latest value
